@@ -1,4 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import { Barlow } from 'next/font/google';
+
+
+const barlow = Barlow({ weight: '400', subsets: ['latin',] })
 
 const GlobalStyle = createGlobalStyle`
   html,
@@ -6,8 +10,8 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
     padding: 0;
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: ${barlow.style.fontFamily};
+    background-color: #3d3d3d
   }
 
   a {
