@@ -41,6 +41,7 @@ const Description = styled.p`
   line-height: 1.5;
   font-size: 1.5rem;
 `;
+
 const CodeTag = styled.code`
   background: #fafafa;
   border-radius: 5px;
@@ -51,4 +52,4 @@ const CodeTag = styled.code`
     Bitstream Vera Sans Mono, Courier New, monospace;
 `;
 
-export { Container, Main, Title, Description, CodeTag };
+export { Container, Main, Title, Description, CodeTag};

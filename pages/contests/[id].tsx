@@ -2,6 +2,8 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 import type { ContestType, ResponseError } from "@/interfaces";
+import { Container } from "@/components/sharedstyles";
+import { CountryName, MatchName, ScoreText, StatusText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText } from "@/components/conteststyles";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url)
@@ -25,11 +27,31 @@ export default function ContestPage() {
 
   return (
     <>
-      {isValidating ? (<>
-        <p>Validating...</p>
-      </>) : (<>
-        <p>{data.name}</p>
-      </>)}
+      <Container>
+        <ContestMain>
+          {isValidating ? (<>
+            <p>Validating...</p>
+          </>) : (<>
+            <CountryName>
+              {data.country}
+            </CountryName>
+            <MatchName>
+              {data.name}
+            </MatchName>
+            <StatusText>{data.status.type}</StatusText>
+            <ScoreText>
+              {data.homeScore.current} - {data.awayScore.current}
+            </ScoreText>
+            <VersusInfo>
+              <TeamName>{data.homeTeam.name}</TeamName>
+              <StatusMetor>
+                <LiveStatusText>{data.liveStatus}</LiveStatusText>
+              </StatusMetor>
+              <TeamName>{data.awayTeam.name}</TeamName>
+            </VersusInfo>
+          </>)}
+        </ContestMain>
+      </Container>
     </>
   )
 }
