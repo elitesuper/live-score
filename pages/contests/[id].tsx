@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 import type { ContestType, ResponseError } from "@/interfaces";
-import { Container } from "@/components/sharedstyles";
+import { Container, ErrorText } from "@/components/sharedstyles";
 import { CountryName, MatchName, ScoreText, StatusText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText } from "@/components/conteststyles";
 
 const fetcher = async (url: string) => {
@@ -21,8 +21,8 @@ export default function ContestPage() {
     ResponseError
   >(() => (query.id ? `/api/contests/${query.id}` : null), fetcher);
 
-  if (error) return <div>{error.message}</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (error) return <Container><ContestMain><ErrorText>{error.message}</ErrorText></ContestMain></Container>;
+  if (isLoading) return <Container><ContestMain>Loading</ContestMain></Container>;
   if (!data) return null;
 
   return (

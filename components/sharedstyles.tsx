@@ -52,4 +52,10 @@ const CodeTag = styled.code`
     Bitstream Vera Sans Mono, Courier New, monospace;
 `;
 
-export { Container, Main, Title, Description, CodeTag};
+const ErrorText = styled.p`
+  text-align: center;
+  color: #ef7384;
+`;
+
+
+export { Container, Main, Title, Description, CodeTag, ErrorText};
