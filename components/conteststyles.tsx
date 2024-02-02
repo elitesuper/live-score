@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 
-const ContestMain = styled.main`
+const ContestMain = styled.div`
   padding: 5rem 0;
   flex-direction: column;
   justify-content: center;
@@ -91,6 +91,22 @@ const LiveStatusText = styled.h6`
   color: ${({ theme }) => theme.colors.secondary};
 `
 
+const ContestContainer = styled.div`
+  padding: 0 0.5rem;
+  max-width: 1400px;
+  margin: auto;
+`
+const ContestHeader = styled.div`
+  padding: 1rem 0;
+  width: 100%;
+  justify-content: center;
+`
 
-export { MatchName, CountryName, StatusText, ScoreText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText };
+const ContestBody = styled.div`
+  padding: 1rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`
 
+export { MatchName, CountryName, StatusText, ScoreText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText, ContestContainer, ContestHeader, ContestBody };

@@ -18,14 +18,8 @@ export default function Home() {
       </Head>
       <Main>
         <Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="https://github.com/elitesuper/live-score">Live Score</a>
         </Title>
-
-        <Description>
-          Get started by editing
-          <CodeTag>pages/index.tsx</CodeTag>
-        </Description>
-
         <Cards />
       </Main>
     </Container>
