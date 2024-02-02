@@ -9,6 +9,7 @@ const Container = styled.div`
   height: 100vh;
   min-height: 100vh;
 `;
+
 const Main = styled.main`
   padding: 5rem 0;
   flex: 1;
@@ -26,7 +27,7 @@ const Title = styled.h1`
   text-decoration: none;
 
   a {
-    color: ${({ theme }) => theme.colors.secondary};
+    color: ${({ theme }) => theme.colors?.secondary};
     text-decoration: none;
     &:hover,
     :focus,

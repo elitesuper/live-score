@@ -3,8 +3,6 @@ import {
   Container,
   Main,
   Title,
-  Description,
-  CodeTag,
 } from "@/components/sharedstyles";
 import Cards from "@/components/cards";
 

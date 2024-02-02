@@ -2,7 +2,7 @@ import useSWR from "swr";
 import React from 'react';
 import { ContestBody, ContestContainer, ContestHeader } from "@/components/conteststyles";
 import { Title } from "@/components/sharedstyles";
-import { ContestType } from "@/interfaces";
+import { ContestType } from "../../interfaces";
 import ContestCard from "@/components/contestcard";
 
 const fetcher = (url: string) => fetch(url).then((res) => res.json())

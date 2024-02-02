@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import useSWR from "swr";
 
-import type { ContestType, ResponseError } from "@/interfaces";
+import type { ContestType, ResponseError } from "../../interfaces";
 import { Container, ErrorText } from "@/components/sharedstyles";
 import { CountryName, MatchName, ScoreText, StatusText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText } from "@/components/conteststyles";
 
