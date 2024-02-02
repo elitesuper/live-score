@@ -103,10 +103,11 @@ const ContestHeader = styled.div`
 `
 
 const ContestBody = styled.div`
-  padding: 1rem 0;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
-`
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-content: space-around;
+  padding: 20px;
+`;
 
 export { MatchName, CountryName, StatusText, ScoreText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText, ContestContainer, ContestHeader, ContestBody };
