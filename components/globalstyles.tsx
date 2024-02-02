@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import { Barlow } from 'next/font/google';
 
 
-const barlow = Barlow({ weight: '400', subsets: ['latin',] })
+const barlow = Barlow({ weight: '100', subsets: ['latin',] })
 
 const GlobalStyle = createGlobalStyle`
   html,

@@ -11,6 +11,7 @@ const ContestMain = styled.main`
 
 const CountryName = styled.p`
   margin: 0;
+  padding: 0.2rem 0;
   line-height: 1.15;
   font-size: 1.2rem;
   text-align: center;
@@ -20,6 +21,7 @@ const CountryName = styled.p`
 
 const MatchName = styled.h4`
   margin: 0;
+  padding: 0.2rem 0;
   line-height: 1.15;
   font-size: 1.5rem;
   text-align: center;
@@ -28,6 +30,7 @@ const MatchName = styled.h4`
 
 const StatusText = styled.p`
   margin: 0;
+  padding: 0.2rem 0;
   line-height: 1.15;
   font-size: 1.2rem;
   text-align: center;
@@ -36,11 +39,11 @@ const StatusText = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
 `;
 
-const ScoreText = styled.h2`
+const ScoreText = styled.h1`
   padding: 1rem 0;
   margin: 0;
   line-height: 1.5;
-  font-size: 2.5rem;
+  font-size: 4rem;
   text-align: center;
   text-decoration: none;
 `
@@ -49,6 +52,10 @@ const VersusInfo = styled.div`
   padding: 1rem 0;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-direction: column; /* Change to column layout on smaller screens */
+    align-items: center; /* Center align items when in column layout */
+  }
 `;
 
 const TeamName = styled.h4`
