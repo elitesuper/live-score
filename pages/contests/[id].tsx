@@ -51,7 +51,7 @@ export default function ContestPage() {
             <MatchName>
               {data.name}
             </MatchName>
-            <StatusText>{statusText(data.status.type, data.timestamp)}</StatusText>
+            <StatusText status={data.status.type}>{statusText(data.status.type, data.timestamp)}</StatusText>
             <ScoreText>
               {data.homeScore.current} - {data.awayScore.current}
             </ScoreText>

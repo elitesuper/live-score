@@ -28,7 +28,7 @@ const MatchName = styled.h4`
   text-decoration: none;
 `;
 
-const StatusText = styled.p`
+const StatusText = styled.p<{ status: string }>`
   margin: 0;
   padding: 0.2rem 0;
   line-height: 1.15;
@@ -36,7 +36,19 @@ const StatusText = styled.p`
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.secondary};
+  color:
+  ${({ status }) => {
+    switch (status) {
+      case "canceled":
+        return "#ef7384";
+      case "finished":
+        return "#52bc5e";
+      case "inprogress":
+        return "yellow";
+      default:
+        return "white";
+    }
+  }};
 `;
 
 const ScoreText = styled.h1`
