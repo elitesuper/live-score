@@ -11,6 +11,12 @@ export type TeamType = {
   subTeams: any[]; // Adjust the type if sub-teams have a specific structure
 };
 
+export type StatusCount = {
+  value: string;
+  count: number;
+  text: string;
+}
+
 export type ScoreType = {
   current: number;
   period1: number;
