@@ -70,13 +70,23 @@ const TeamName = styled.h4`
   }
 `;
 
-const StatusMetor = styled.div`
+const StatusMetor = styled.div<{ status: string }>`
   width: 100px;
   height: 100px;
   border: double 0.2rem transparent;
   border-radius: 50%;
-  background-image: linear-gradient(#3d3d3d, #3d3d3d), 
-                    linear-gradient(to left, green 50%, grey 50%);
+  background-image:
+  ${({ status }) => {
+    switch (status) {
+      case "finished":
+        return "linear-gradient(#3d3d3d, #3d3d3d), linear-gradient(green, green)";
+      case "inprogress":
+        return "linear-gradient(#3d3d3d, #3d3d3d), linear-gradient(to left, green 50%, grey 50%)";
+      default:
+        return "linear-gradient(#3d3d3d, #3d3d3d), linear-gradient(grey, grey)";
+    }
+  }};
+
   background-origin: border-box;
   background-clip: content-box, border-box;
   display:flex;

@@ -4,6 +4,7 @@ import useSWR from "swr";
 import type { ContestType, ResponseError } from "../../interfaces";
 import { Container, ErrorText } from "@/components/sharedstyles";
 import { CountryName, MatchName, ScoreText, StatusText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText } from "@/components/conteststyles";
+import { formatDate } from "lib/dateformat";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url)
@@ -14,6 +15,18 @@ const fetcher = async (url: string) => {
   return data;
 }
 
+const statusText = (status: string, date: number): string => {
+  switch(status) {
+    case "inprogress":
+      return 'LIVE';
+    case "finished":
+      return 'FULLTIME';
+    case "notstarted":
+      return formatDate(date);
+    default:
+      return status;
+  }
+} 
 export default function ContestPage() {
   const { query } = useRouter();
   const { data, error, isLoading, isValidating } = useSWR<
@@ -38,14 +51,14 @@ export default function ContestPage() {
             <MatchName>
               {data.name}
             </MatchName>
-            <StatusText>{data.status.type}</StatusText>
+            <StatusText>{statusText(data.status.type, data.timestamp)}</StatusText>
             <ScoreText>
               {data.homeScore.current} - {data.awayScore.current}
             </ScoreText>
             <VersusInfo>
               <TeamName>{data.homeTeam.name}</TeamName>
-              <StatusMetor>
-                <LiveStatusText>{data.liveStatus}</LiveStatusText>
+              <StatusMetor status={data.status.type}>
+                <LiveStatusText>{(data.liveStatus != 'Canceled') ? data.liveStatus : ''}</LiveStatusText>
               </StatusMetor>
               <TeamName>{data.awayTeam.name}</TeamName>
             </VersusInfo>
