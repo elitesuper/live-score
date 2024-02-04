@@ -128,5 +128,9 @@ const ContestList = styled.div`
 const ContestControl = styled.div`
   width: 100%;
   display: flex;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
 `;
 export { MatchName, CountryName, StatusText, ScoreText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText, ContestContainer, ContestHeader, ContestBody, ContestList, ContestControl };

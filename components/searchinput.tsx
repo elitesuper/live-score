@@ -1,6 +1,5 @@
 import React, { ChangeEvent } from 'react';
 import styled from 'styled-components';
-import { StatusCount } from '../interfaces';
 
 const StyledInput = styled.input`
   padding: 8px;

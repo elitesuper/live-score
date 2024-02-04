@@ -7,6 +7,10 @@ const ContestSideBar = styled.div`
   background: white;
   color: #3d3d3d;
   position: relative;
+  @media (max-width: 768px) {
+    display: block;
+    margin: 1rem 0;
+  }
 `;
 
 const ContestSideBarHeader = styled.div`
@@ -15,12 +19,16 @@ const ContestSideBarHeader = styled.div`
   width: 300px;
   border: 1px solid #ccc;
   cursor: pointer;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const ContestSideBarBody = styled.div<{ isopen: string }>`
   position: absolute;
   top: 50px;
   display: ${(props) => (props.isopen == "true" ? "block" : "none")};
+  width: 100%;
 `;
 
 const SelectButton = styled.div<{active: string}>`
@@ -28,10 +36,14 @@ const SelectButton = styled.div<{active: string}>`
   border: solid 1px grey;
   padding: 8px;
   cursor: pointer;
+  align-items: center;
   background: ${(props) => (props.active == "true" ? "#a3a3a3" : "white")};
   display: flex;
   &:hover {
     background-color: #a3a3a3;
+  }
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `;
 
