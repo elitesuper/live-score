@@ -28,7 +28,7 @@ describe('Contests Component', () => {
 
   it('renders contests when data is available', async () => {
     // Mock the useSWR hook to return mock data
-    const mockData: ContestType[] = contestData as ContestType[];;
+    const mockData: ContestType[] = contestData as ContestType[];
     (useSWR as jest.Mock).mockReturnValue({
       data: mockData.slice(0, 10),
       error: undefined,

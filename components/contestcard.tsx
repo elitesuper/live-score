@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ContestType } from "../interfaces";
 import styled from "styled-components";
 
@@ -9,8 +10,16 @@ const Card = styled.div`
   width: 400px; /* Adjust the width of each card as needed */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1366px) {
     width: 300px
+  }
+
+  @media (max-width: 992px) {
+    width: 40%
+  }
+
+  @media (max-width: 768px) {
+    width: 80%
   }
 
   &:hover,
@@ -24,7 +33,7 @@ const Card = styled.div`
 export default function ContestCard({ contest }: { contest: ContestType }) {
   return (
     <Card data-testid="contest-card">
-      <p>{contest.name}</p>
+      <Link href={`/contests/${contest.id}`}>{contest.name}</Link>
     </Card>
   );
 }

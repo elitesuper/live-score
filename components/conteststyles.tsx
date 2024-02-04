@@ -64,7 +64,10 @@ const TeamName = styled.h4`
   font-size: 1.5rem;
   text-align: center;
   text-decoration: none;
-  text-wrap: nowrap
+  width: 300px;
+  @media (min-width: 768px) {
+    margin: auto
+  }
 `;
 
 const StatusMetor = styled.div`
@@ -97,8 +100,10 @@ const ContestContainer = styled.div`
   margin: auto;
 `
 const ContestHeader = styled.div`
-  padding: 1rem 0;
+  padding: 1rem 20px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 `
 
@@ -108,6 +113,20 @@ const ContestBody = styled.div`
   gap: 20px; /* Adjust the gap between cards as needed */
   justify-content: space-around;
   padding: 20px;
+  height: fit-content;
 `;
 
-export { MatchName, CountryName, StatusText, ScoreText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText, ContestContainer, ContestHeader, ContestBody };
+const ContestList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards as needed */
+  justify-content: space-around;
+  padding: 20px;
+  height: fit-content;
+`;
+
+const ContestControl = styled.div`
+  width: 100%;
+  display: flex;
+`;
+export { MatchName, CountryName, StatusText, ScoreText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText, ContestContainer, ContestHeader, ContestBody, ContestList, ContestControl };
