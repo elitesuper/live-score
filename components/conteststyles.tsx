@@ -113,7 +113,7 @@ const LiveStatusText = styled.h6`
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  color: ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors?.secondary};
 `
 
 const ContestContainer = styled.div`

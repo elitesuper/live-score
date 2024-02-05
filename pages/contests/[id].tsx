@@ -4,7 +4,7 @@ import useSWR from "swr";
 import type { ContestType, ResponseError } from "../../interfaces";
 import { Container, ErrorText } from "@/components/sharedstyles";
 import { CountryName, MatchName, ScoreText, StatusText, VersusInfo, TeamName, ContestMain, StatusMetor, LiveStatusText } from "@/components/conteststyles";
-import { formatDate } from "lib/dateformat";
+import { formatDate } from "../../lib/dateformat";
 
 const fetcher = async (url: string) => {
   const res = await fetch(url)

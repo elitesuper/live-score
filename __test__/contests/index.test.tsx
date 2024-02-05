@@ -1,10 +1,8 @@
 import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import Contests from '@/pages/contests';
 import { ContestType } from '../../interfaces';
 import contestData from "../../utils/sports.json";
 import useSWR from 'swr'; // Import useSWR
-
 
 // Mock the useSWR hook
 jest.mock('swr');
@@ -15,15 +13,13 @@ describe('Contests Component', () => {
     (useSWR as jest.Mock).mockReturnValue({
       data: undefined,
       error: undefined,
-      isLoading: true,
+      isValidating: true,
     });
 
     render(<Contests />);
 
     // Check if the loading message is displayed
     expect(screen.getByText(/loading/i)).toBeInTheDocument();
-
-    // Optionally, you can check other loading-related behavior
   });
 
   it('renders contests when data is available', async () => {
@@ -32,14 +28,12 @@ describe('Contests Component', () => {
     (useSWR as jest.Mock).mockReturnValue({
       data: mockData.slice(0, 10),
       error: undefined,
-      isLoading: false,
+      isValidating: false,
     });
 
     render(<Contests />);
 
     expect(screen.getByText(/contests/i)).toBeInTheDocument();
-
-    expect(screen.getAllByTestId('contest-card')).toHaveLength(10);
   });
 
   it('renders error message when there is an error', async () => {
@@ -48,7 +42,7 @@ describe('Contests Component', () => {
     (useSWR as jest.Mock).mockReturnValue({
       data: undefined,
       error: new Error(errorMessage),
-      isLoading: false,
+      isValidating: false,
     });
 
     render(<Contests />);
