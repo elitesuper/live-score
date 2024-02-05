@@ -1,9 +1,9 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import { useRouter } from 'next/router';
 import useSWR from 'swr';
-import ContestPage from '../../pages/contests/[id]'; // Update with the correct path
+import ContestPage from '../../pages/contests/[id]';
 import { ContestType } from '../../interfaces';
-import testData from '../../utils/sports.json'; // Replace with your actual test data
+import testData from '../../utils/sports.json';
 
 // Mock useRouter
 jest.mock('next/router', () => ({
@@ -18,7 +18,6 @@ describe('ContestPage Component', () => {
   const mockData: ContestType = testData[0] as ContestType;
 
   it('renders loading state initially', async () => {
-    // Mock the useRouter hook to provide query.id
     (useRouter as jest.Mock).mockReturnValue({
       query: { id: mockData.id },
     });
